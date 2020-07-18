@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 
-driver=webdriver.Chrome(executable_path='C:\\Users\Zein Zebib\Documents\Python Stuff\Online Automation\chromedriver.exe')
+driver=webdriver.Chrome(executable_path=########ENTER YOUR CHROMEDRIVER PATH#####)
 
 bla= int(input('1 for CHi\n'
 '2 for Z\n'
