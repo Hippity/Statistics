@@ -54,7 +54,7 @@ def CI_popvar():
         n=float(input('Enter sample size: '))
         s=float(input('Enter sample standard deviation: '))
         Chi=float(input('Enter Chi Square a/2: '))
-        Chi2= float(input('Enter Chi Square 1-a/2'))
+        Chi2= float(input('Enter Chi Square 1-a/2: '))
         lower_bound=round((n-1)*(s**2)/Chi,4)
         upper_bound=round((n-1)*(s**2)/Chi2,4)
         print('The two sided CI is ('+str(lower_bound)+' , '+str(upper_bound)+')')
@@ -114,17 +114,14 @@ def CI_popprob():
             print('The upper bound is '+ str(upper_bound)+'\n'
             'The lower bound is '+ str(lower_bound))
 
-CI_popvar()
 
+options=input('Enter 1 for population mean\n'
+'Enter 2 for population variance\n'
+'Enter 3 for population proportion')
 
-
-
-
-        
-
-
-
-
-
-
-
+if options=='1':
+    CI_popmean()
+elif options=='2':
+    CI_popvar()
+else:
+    CI_popprob()
