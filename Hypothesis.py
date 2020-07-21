@@ -42,7 +42,7 @@ def HP_popmean():
             za=float(input('Enter Za or ta,n-1: '))
             zb=float(input('Enter Zb or tb,n-1: '))
 
-            n=round((s*(za-zb)/(mo-m))**2,4)
+            n=round((s*(za+zb)/(mo-m))**2,4)
 
             print('Sample size is '+str(n))
     
@@ -77,7 +77,9 @@ def HP_popmean():
             za=float(input('Enter Za or ta,n-1: '))
             zb=float(input('Enter Zb or tb,n-1: '))
 
-            n=round((s*(za-zb)/(mo-m))**2,4)
+            n=s*(za+zb)/(mo-m)
+            n=round(n**2,4)
+
 
             print('Sample size is '+str(n))
     
@@ -111,9 +113,9 @@ def HP_popmean():
             mo=float(input('Enter mo: '))
             m=float(input("Enter m': "))
             za=float(input('Enter Za/2 or ta/2,n-1: '))
-            zb=float(input('Enter Zb/2 or tb/2,n-1: '))
+            zb=float(input('Enter Zb or tb,n-1: '))
 
-            n=round((s*(za-zb)/(mo-m))**2,4)
+            n=round((s*(za+zb)/(mo-m))**2,4)
 
             print('Sample size is '+str(n))
 
@@ -263,5 +265,11 @@ def HP_poprob():
         
 
 
+options= input('Enter 1 for population proportion\n'
+'Enter 2 for population mean')
 
-HP_poprob()
+if options=='1':
+    HP_poprob()
+
+else:
+    HP_popmean()
